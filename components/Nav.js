@@ -9,9 +9,9 @@ const Nav = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.main}>
-        <p className={styles.navTitle}>Space Jelly Shop</p>
+        <p className={styles.navTitle}>EcoPet Hub</p>
         <p className={styles.description}>
-          The best space jellyfish swag on the web!
+          Sustainable, eco-friendly products for your beloved pets!
         </p>
       </div>
       <p>
