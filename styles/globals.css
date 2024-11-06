@@ -1,22 +1,23 @@
 :root {
   --max-width: 60em;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", 
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", 
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 240, 240, 240; /* Light gradient for a clean feel */
   --background-end-rgb: 255, 255, 255;
 
   --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
+    from 180deg at 50% 50%, 
+    #16abff33 0deg, 
+    #0885ff33 55deg, 
+    #54d6ff33 120deg, 
+    #0071ff33 160deg, 
     transparent 360deg
   );
+  
   --secondary-glow: radial-gradient(
     rgba(255, 255, 255, 1),
     rgba(255, 255, 255, 0)
@@ -37,8 +38,7 @@
   --callout-rgb: 238, 240, 241;
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
-  --card-border-rgb: 200, 200, 200
-  /* 131, 134, 135; */
+  --card-border-rgb: 200, 200, 200;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -118,4 +118,22 @@ button {
 
 p {
   margin: 1em 0;
+}
+
+/* Button Styling */
+.button {
+  font-family: var(--font-mono);
+  font-size: 1.2em;
+  font-weight: 700;
+  background-color: #2575fc; /* Modern blue for buttons */
+  color: white;
+  padding: 0.6em 1em;
+  border-radius: 0.2em;
+  border: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #1e61d4; /* Slightly darker on hover */
 }
