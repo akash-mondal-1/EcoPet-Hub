@@ -1,24 +1,23 @@
-[{
+[
+  {
     "id": "price_1Mb6NPIG28tlgXFUlYF3NldB",
-    "title": "Space Jelly Tshirt",
-    "description": "Bring Cosmo the space Jellyfish to your wardrobe with this high quality tshirt.",
-    "image": "/images/spacejelly-tshirt.jpg",
+    "title": "Biodegradable pet toys",
+    "description": "Eco-friendly toys made from biodegradable materials for a sustainable playtime.",
+    "image": "/images/R.png",
     "price": 20.00
-
-},
-{
+  },
+  {
     "id": "price_1Mb6QMIG28tlgXFUA1b9Zv45",
-    "title": "Space Jelly Stickers",
-    "description": "Add some flare to your laptop with a sticker of Cosmo the Space Jellyfish.",
-    "image": "/images/spacejelly-stickers.jpg",
+    "title": "Organic pet food and treats",
+    "description": "Nutritious and organic food and treats to keep your pet healthy and happy.",
+    "image": "/images/pngtree-organic-pet-food-embracing-natural-nutrition-on-a-white-textured-background-image_13654133.png",
     "price": 10.00
-
-},
-{   
+  },
+  {
     "id": "price_1Mb6RGIG28tlgXFUTKg9L4fV",
-    "title": "Space Jelly Combo",
-    "description": "Show your love for Cosmo with a tshirt and sticker combo pack!",
-    "image": "/images/spacejelly-combo.jpg",
+    "title": "Eco-friendly pet grooming supplies",
+    "description": "Sustainable grooming essentials that are gentle on pets and the planet.",
+    "image": "/images/Dog_Blog_Artwork-Hero-1-2048x1255.jpg",
     "price": 25.00
-
-}]
+  }
+]
