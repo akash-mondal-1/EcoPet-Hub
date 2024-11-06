@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest",  // Optional, if you plan to use Jest for testing
+    "format": "prettier --write .",  // Optional, if you add prettier
+    "type-check": "tsc --noEmit"  // Optional, for TypeScript type checking
   },
   "dependencies": {
     "@next/font": "13.1.6",
@@ -14,6 +17,7 @@
     "@types/node": "18.13.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.10",
+    "@types/stripe-v3": "^3.0.0",  // Optional, for Stripe TypeScript types
     "azion": "latest",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
@@ -21,6 +25,13 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "dotenv": "^16.0.0",  // Optional, for environment variable management
+    "prettier": "^2.8.1"  // Optional, for code formatting
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",  // Optional, for testing if you add test scripts
+    "babel-jest": "^29.0.0",  // Optional, if you're using Jest for React
+    "ts-jest": "^29.0.0"  // Optional, if using TypeScript with Jest
   }
 }
