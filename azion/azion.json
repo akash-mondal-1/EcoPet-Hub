@@ -1,0 +1,58 @@
+{
+  "name": "EcoPet-Hub",
+  "bucket": "EcoPet-Hub",
+  "preset": "next",
+  "env": "production",
+  "prefix": "20241106141644",
+  "not-first-run": true,
+  "function": {
+    "id": 31823,
+    "name": "__DEFAULT__",
+    "file": ".edge/worker.js",
+    "args": "azion/args.json",
+    "instance-id": 30488,
+    "instance-name": "__DEFAULT__",
+    "cache-id": 184510
+  },
+  "application": {
+    "id": 1730903893,
+    "name": "__DEFAULT__"
+  },
+  "domain": {
+    "id": 1730902689,
+    "name": "EcoPet-Hub",
+    "domain_name": "qx96cjhnjk.map.azionedge.net",
+    "url": "https://qx96cjhnjk.map.azionedge.net"
+  },
+  "rt-purge": {
+    "purge_on_publish": true
+  },
+  "origin": [
+    {
+      "origin-id": 162736,
+      "origin-key": "1bb32a97-ba79-44de-b835-afdbedbe9ec0",
+      "name": "origin-storage-default"
+    }
+  ],
+  "rules-engine": {
+    "created": false,
+    "rules": [
+      {
+        "id": 316070,
+        "name": "Set Storage Origin for All Requests",
+        "phase": "request"
+      },
+      {
+        "id": 316071,
+        "name": "Deliver Static Assets",
+        "phase": "request"
+      },
+      {
+        "id": 316072,
+        "name": "Execute Edge Function",
+        "phase": "request"
+      }
+    ]
+  },
+  "cache-settings": []
+}
