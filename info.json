@@ -1,8 +1,9 @@
 {
-  "name": "Space Jelly Shop",
-  "message": "E-commerce website built with nextjs and react",
+  "name": "Ecopet Hub",
+  "message": "Your one-stop shop for eco-friendly pet products and sustainable pet care essentials. Built with Next.js and React.",
   "preset": "next",
   "mode": "deliver",
-  "path": "/space-jelly-shop"
+  "path": "/ecopet-hub"
 }
+
 
