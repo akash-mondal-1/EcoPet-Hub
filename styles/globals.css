@@ -1,8 +1,8 @@
 :root {
   --max-width: 60em;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", 
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", 
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
@@ -132,6 +132,7 @@ p {
   border: 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   cursor: pointer;
+  transition: background-color 0.2s ease; /* Added hover effect */
 }
 
 .button:hover {
