@@ -28,7 +28,7 @@ const Product = ({ product }) => {
           <p className={styles.description}>${price.toFixed(2)}</p>
 
           <p>
-            <button className={styles.button} onClick={() => addToCart({ id })}>
+            <button className={styles.button} onClick={() => addToCart({ id, title, price })}>
               Buy
             </button>
           </p>
@@ -42,6 +42,14 @@ export default Product;
 
 export const getStaticProps = async ({ params }) => {
   const product = products.find((product) => product.id === params.productId);
+
+  // Handle case where product is not found
+  if (!product) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       product,
@@ -51,7 +59,7 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const paths = products.map((product) => ({
-    params: { productId: product.id },
+    params: { productId: product.id.toString() },
   }));
 
   return {
