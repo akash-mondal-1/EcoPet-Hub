@@ -10,21 +10,41 @@ interface Product {
   price: number;
 }
 
-const defaultCart = {
+interface CartProduct {
+  id: string;
+  quantity: number;
+}
+
+interface Cart {
+  products: { [key: string]: CartProduct };
+}
+
+interface CartContextProps {
+  totalPrice: number;
+  totalItems: number;
+  addToCart: ({ id }: { id: string }) => void;
+  updateCart: ({ id, quantity }: { id: string; quantity: number }) => void;
+  checkout: () => void;
+  cartItems: Array<CartProduct & { pricePerItem: number }>;
+}
+
+const defaultCart: Cart = {
   products: {},
 };
 
-export const useCartState = () => {
-  const [cart, setCart] = useState(defaultCart);
+export const useCartState = (): CartContextProps => {
+  const [cart, setCart] = useState<Cart>(defaultCart);
 
+  // Load cart from local storage on mount
   useEffect(() => {
     const storedState = window.localStorage.getItem("space-jellyfish-cart");
-    const data = storedState && JSON.parse(storedState);
+    const data: Cart | null = storedState ? JSON.parse(storedState) : null;
     if (data) {
       setCart(data);
     }
   }, []);
 
+  // Save cart to local storage whenever it changes
   useEffect(() => {
     if (cart !== defaultCart) {
       const data = JSON.stringify(cart);
@@ -32,91 +52,38 @@ export const useCartState = () => {
     }
   }, [cart]);
 
-  const addToCart = ({ id }: { id?: string } = {}) => {
-    if (!id) {
-      return;
+  // Add item to cart
+  const addToCart = ({ id }: { id: string }) => {
+    setCart((prev) => {
+      const product = prev.products[id];
+      return {
+        ...prev,
+        products: {
+          ...prev.products,
+          [id]: product
+            ? { id, quantity: product.quantity + 1 }
+            : { id, quantity: 1 },
+        },
+      };
+    });
+  };
+
+  // Update item quantity in cart
+  const updateCart = ({ id, quantity }: { id: string; quantity: number }) => {
+    if (quantity <= 0) {
+      setCart((prev) => {
+        const { [id]: _, ...rest } = prev.products;
+        return { ...prev, products: rest };
+      });
+    } else {
+      setCart((prev) => ({
+        ...prev,
+        products: {
+          ...prev.products,
+          [id]: { id, quantity },
+        },
+      }));
     }
-    setCart((prev) => {
-      //@ts-ignore
-      if (prev.products[id]) {
-        return {
-          ...prev,
-          products: {
-            ...prev.products,
-            //@ts-ignore
-            [id]: { id, quantity: prev.products[id].quantity + 1 },
-          },
-        };
-      } else {
-        return {
-          ...prev,
-          products: {
-            ...prev.products,
-            [id]: { id, quantity: 1 },
-          },
-        };
-      }
-    });
   };
 
-  const updateCart = ({
-    id,
-    quantity,
-  }: { id?: string; quantity?: number } = {}) => {
-    if (!id) {
-      return;
-    } //@ts-ignore
-    setCart((prev) => {
-      //@ts-ignore
-      if (prev.products[id]) {
-        return {
-          ...prev,
-          products: {
-            ...prev.products,
-            //@ts-ignore
-            [id]: { id, quantity: quantity },
-          },
-        };
-      }
-    });
-  };
-
-  const cartItems = Object.keys(cart.products).map((key) => {
-    const product: Product | undefined = products.find(
-      ({ id }) => `${id}` === `${key}`
-    );
-    return {
-      //@ts-ignore
-      ...cart.products[key],
-      pricePerItem: (product as Product).price,
-    };
-  });
-
-  const totalPrice = cartItems.reduce(
-    (total, item) => total + item.pricePerItem * item.quantity,
-    0
-  );
-
-  const totalItems = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
-
-  const checkout = () => {
-    initiateCheckout({
-      lineItems: cartItems.map((item) => ({
-        price: item.id,
-        quantity: item.quantity,
-      })),
-    });
-  };
-
-  return { totalPrice, totalItems, addToCart, checkout, cartItems, updateCart };
-};
-
-export const CartContext = createContext({});
-
-export const useCart = () => {
-  const cart = useContext(CartContext);
-  return cart;
-};
+  // Generate cart items with additional product
