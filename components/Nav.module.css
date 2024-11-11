@@ -39,6 +39,12 @@
   color: whitesmoke;
 }
 
+/* Optional: Enhancing button click interaction */
+.nav button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Adding hover effect */
+  cursor: pointer;
+}
+
 .description {
   display: inherit;
   justify-content: center;
@@ -49,4 +55,5 @@
   z-index: 2;
   font-family: var(--font-mono);
   margin-top: 2rem;
+  padding: 1rem; /* Optional: Added padding for better spacing */
 }
