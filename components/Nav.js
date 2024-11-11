@@ -6,6 +6,7 @@ import Link from "next/link";
 
 const Nav = () => {
   const { totalPrice, checkout, totalItems } = useCart();
+
   return (
     <nav className={styles.nav}>
       <div className={styles.main}>
@@ -14,14 +15,15 @@ const Nav = () => {
           Sustainable, eco-friendly products for your beloved pets!
         </p>
       </div>
-      <p>
+      <div className={styles.cartButtonWrapper}>
         <Link href="/cart">
-          <button>
+          <button className={styles.cartButton} aria-label="View cart">
             <FaShoppingCart size={22} color="whitesmoke" />
+            {totalItems > 0 && <span className={styles.cartCount}>{totalItems}</span>}
             <p>{totalPrice} €</p>
           </button>
         </Link>
-      </p>
+      </div>
     </nav>
   );
 };
