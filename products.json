@@ -19,5 +19,12 @@
     "description": "Sustainable grooming essentials that are gentle on pets and the planet.",
     "image": "/images/Dog_Blog_Artwork-Hero-1-2048x1255.jpg",
     "price": 25.00
+  },
+   {
+    "id": "price_1Mb6SMIG28tlgXFUA1b9Zv45",
+    "title": "Recyclable pet bedding",
+    "description": "Eco-friendly, comfortable bedding for pets that's made from fully recyclable materials.",
+    "image": "/images/cat.jpg",
+    "price": 30.00
   }
 ]
