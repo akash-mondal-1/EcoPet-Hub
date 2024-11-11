@@ -5,22 +5,23 @@
   align-items: center;
   padding: 3rem 6rem;
   min-height: 100vh;
-  background: black;
-  color: whitesmoke;
-  flex-wrap: wrap; /* Added wrap for better mobile layout */
+  background: #1a1a1a; /* Dark gray background instead of black for softer look */
+  color: #f0f0f0;
+  flex-wrap: wrap; /* Keeps layout responsive */
 }
 
 .description {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
   margin-top: 2rem;
-  text-align: center; /* Improved text alignment */
+  text-align: center;
+  color: #b0d882; /* Light green for eco-friendly theme */
 }
 
 .description a {
@@ -34,10 +35,10 @@
   position: relative;
   margin: 0;
   padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  background-color: rgba(160, 200, 120, 0.2); /* Light green with transparency */
+  border: 1px solid rgba(160, 200, 120, 0.4);
   border-radius: var(--border-radius);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for better visibility */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
 }
 
 .code {
@@ -47,7 +48,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
   width: 100%;
   max-width: var(--max-width);
@@ -57,8 +58,8 @@
 .card {
   padding: 1.5rem;
   border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0.4);
+  background: rgba(72, 100, 72, 0.2); /* Light green transparent background */
+  border: 1px solid rgba(72, 100, 72, 0.3);
   transition: background 200ms, border 200ms, transform 200ms;
   list-style: none;
   margin: 1rem;
@@ -67,27 +68,19 @@
 }
 
 .card:hover {
-  transform: scale(1.05); /* Added scale effect on hover for interactivity */
-  background: rgba(var(--card-rgb), 0.1);
-  border: 1px solid rgba(var(--card-border-rgb), 0.15);
-}
-
-.card span {
-  display: inline-block;
-  transition: transform 200ms;
+  transform: scale(1.05); /* Slight scale on hover */
+  background: rgba(72, 100, 72, 0.3);
+  border: 1px solid rgba(72, 100, 72, 0.5);
 }
 
 .card h2 {
   font-weight: 600;
+  color: #9ccd62; /* Greenish color for eco vibe */
   margin-bottom: 0.7rem;
 }
 
-.card h3 {
-  margin: 0.7rem 0;
-}
-
-.card p {
-  margin: 0.7rem 0;
+.card h3, .card p {
+  color: #e0e0e0; /* Light gray text for readability */
   opacity: 1;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -145,28 +138,6 @@
   box-shadow: 0px 2px 8px -1px #0000001a;
 }
 
-.thirteen::before,
-.thirteen::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-}
-
-.thirteen::before {
-  animation: 6s rotate linear infinite;
-  width: 200%;
-  height: 200%;
-  background: var(--tile-border);
-}
-
-.thirteen::after {
-  inset: 0;
-  padding: 1px;
-  border-radius: var(--border-radius);
-  background: linear-gradient(to bottom right, rgba(var(--tile-start-rgb), 1), rgba(var(--tile-end-rgb), 1));
-  background-clip: content-box;
-}
-
 @media (max-width: 700px) {
   .card {
     flex-basis: 100%;
@@ -195,7 +166,7 @@
   font-family: inherit;
   font-size: 1rem;
   font-weight: 700;
-  background-color: blueviolet;
+  background-color: #4CAF50; /* Green button color for eco-friendly vibe */
   padding: 0.8em 1.4em;
   border-radius: 0.2em;
   border: 0;
@@ -204,5 +175,5 @@
 }
 
 .button:hover {
-  background-color: darkviolet; /* Hover effect for the button */
+  background-color: #388E3C; /* Darker green on hover */
 }
