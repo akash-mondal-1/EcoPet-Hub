@@ -25,15 +25,14 @@ jobs:
           node-version: '20.x'
 
       - name: Install NPM dependencies
-        run: yarn
-        
+        run: yarn install
+
       - name: Install Azion CLI
         run: |
-          curl -o azionlinux https://downloads.azion.com/linux/x86_64/azion
+          curl -Lo azionlinux https://downloads.azion.com/linux/x86_64/azion
           sudo mv azionlinux /usr/bin/azion
           sudo chmod u+x /usr/bin/azion
 
       - name: Azion Action Deploy
         run: |
-          azion -t ${{ secrets.AZION_PERSONAL_TOKEN }}
-          azion deploy 
+          azion -t ${{ secrets.AZION_PERSONAL_TOKEN }} deploy
