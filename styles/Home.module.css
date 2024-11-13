@@ -19,7 +19,7 @@
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
-  margin-top: 2rem;
+  margin-top: 3rem; /* Increased margin for visual separation */
   text-align: center;
   color: #b0d882; /* Light green for eco-friendly theme */
 }
@@ -39,6 +39,7 @@
   border: 1px solid rgba(160, 200, 120, 0.4);
   border-radius: var(--border-radius);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+  word-break: break-word; /* Ensure long text wraps correctly */
 }
 
 .code {
@@ -48,8 +49,8 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* More flexible for varying screen sizes */
+  gap: 2rem; /* Slightly increased gap for better card separation */
   width: 100%;
   max-width: var(--max-width);
   margin-top: 1rem;
@@ -60,7 +61,7 @@
   border-radius: var(--border-radius);
   background: rgba(72, 100, 72, 0.2); /* Light green transparent background */
   border: 1px solid rgba(72, 100, 72, 0.3);
-  transition: background 200ms, border 200ms, transform 200ms;
+  transition: background 200ms, border 200ms, transform 200ms, box-shadow 200ms;
   list-style: none;
   margin: 1rem;
   flex-basis: calc(50% - 2rem);
@@ -71,6 +72,7 @@
   transform: scale(1.05); /* Slight scale on hover */
   background: rgba(72, 100, 72, 0.3);
   border: 1px solid rgba(72, 100, 72, 0.5);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
 }
 
 .card h2 {
@@ -171,9 +173,20 @@
   border-radius: 0.2em;
   border: 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  transition: background-color 300ms ease;
+  transition: background-color 300ms ease, transform 200ms ease;
 }
 
 .button:hover {
   background-color: #388E3C; /* Darker green on hover */
+  transform: scale(1.05); /* Subtle grow effect on hover */
+}
+
+.button:focus {
+  outline: 2px solid #9ccd62; /* Green outline on focus for accessibility */
+  outline-offset: 4px;
+}
+
+.card:focus {
+  outline: 2px solid #9ccd62; /* Green outline on focus for accessibility */
+  outline-offset: 4px;
 }
