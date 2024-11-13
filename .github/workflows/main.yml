@@ -19,13 +19,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Use Node.js 20.x
+      - name: Use Node.js 18.x
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
       - name: Install NPM dependencies
-        run: npm install
+        run: yarn
         
       - name: Install Azion CLI
         run: |
@@ -36,4 +36,4 @@ jobs:
       - name: Azion Action Deploy
         run: |
           azion -t ${{ secrets.AZION_PERSONAL_TOKEN }}
-          azion deploy --runtime node20
+          azion deploy 
