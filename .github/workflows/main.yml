@@ -5,34 +5,34 @@ on:
     types:
       - closed
     branches:
-      - "main"
+      - main
 
 jobs:
   deploy:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Use Node.js 
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
 
-      - name: Install NPM dependencies
+      - name: Install dependencies
         run: yarn install
 
       - name: Install Azion CLI
         run: |
           curl -Lo azionlinux https://downloads.azion.com/linux/x86_64/azion
           sudo mv azionlinux /usr/bin/azion
-          sudo chmod u+x /usr/bin/azion
+          sudo chmod +x /usr/bin/azion
 
       - name: Azion Action Deploy
-        run: |
-          azion -t ${{ secrets.AZION_PERSONAL_TOKEN }} deploy
+        env:
+          AZION_TOKEN: ${{ secrets.AZION_PERSONAL_TOKEN }}
+        run: azion -t $AZION_TOKEN deploy
