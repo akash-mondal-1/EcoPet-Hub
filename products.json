@@ -1,29 +1,29 @@
 [
   {
     "id": "price_1Mb6NPIG28tlgXFUlYF3NldB",
-    "title": "Biodegradable pet toys",
-    "description": "Eco-friendly toys made from biodegradable materials for a sustainable playtime.",
+    "title": "Biodegradable Pet Toys",
+    "description": "Eco-friendly toys made from biodegradable materials for sustainable playtime.",
     "image": "/images/R.png",
     "price": 20.00
   },
   {
     "id": "price_1Mb6QMIG28tlgXFUA1b9Zv46",
-    "title": "Organic pet food and treats",
-    "description": "Nutritious and organic food and treats to keep your pet healthy and happy.",
+    "title": "Organic Pet Food and Treats",
+    "description": "Nutritious, organic food and treats for healthy, happy pets.",
     "image": "/images/pngtree-organic-pet-food-embracing-natural-nutrition-on-a-white-textured-background-image_13654133.png",
     "price": 10.00
   },
   {
     "id": "price_1Mb6RGIG28tlgXFUTKg9L4fV",
-    "title": "Eco-friendly pet grooming supplies",
-    "description": "Sustainable grooming essentials that are gentle on pets and the planet.",
+    "title": "Eco-Friendly Pet Grooming Supplies",
+    "description": "Sustainable, gentle grooming essentials for pets and the planet.",
     "image": "/images/Dog_Blog_Artwork-Hero-1-2048x1255.jpg",
     "price": 25.00
   },
   {
     "id": "price_1Mb6SMIG28tlgXFUA1b9Zv47",
-    "title": "Recyclable pet bedding",
-    "description": "Eco-friendly, comfortable bedding for pets that's made from fully recyclable materials.",
+    "title": "Recyclable Pet Bedding",
+    "description": "Eco-friendly, comfortable, fully recyclable bedding for pets.",
     "image": "/images/cat.jpg",
     "price": 30.00
   }
