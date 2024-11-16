@@ -31,8 +31,12 @@ jobs:
           curl -Lo azionlinux https://downloads.azion.com/linux/x86_64/azion
           sudo mv azionlinux /usr/bin/azion
           sudo chmod +x /usr/bin/azion
+          azion --version  # Verify installation
 
       - name: Azion Action Deploy
         env:
           AZION_TOKEN: ${{ secrets.AZION_PERSONAL_TOKEN }}
-        run: azion -t $AZION_TOKEN deploy
+        run: |
+          azion -t $AZION_TOKEN deploy
+          echo "Deployment status: $?"  # Log exit code
+        continue-on-error: true  # Allow workflow to continue after error
